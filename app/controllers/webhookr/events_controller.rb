@@ -8,12 +8,12 @@ module Webhookr
     before_filter :create_service
 
     def show
-      render :nothing => true
+      head :ok
     end
 
     def create
       @service.process!
-      render :nothing => true
+      head :created
     end
 
     private
